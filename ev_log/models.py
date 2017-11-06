@@ -35,7 +35,7 @@ class Event(models.Model):
 
         # parse text for categories
         for i in parser(self.text)[0]:
-            # check if already exists, if not save
+            # check if already exists. if not, save
             try:
                 Category.objects.get(name=i)
             except ObjectDoesNotExist:
@@ -44,7 +44,7 @@ class Event(models.Model):
 
         # parse text for persons
         for i in parser(self.text)[1]:
-            # check if exists, if not save
+            # check if exists. if not, save
             try:
                 Person.objects.get(name=i)
             except ObjectDoesNotExist:
