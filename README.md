@@ -1,5 +1,4 @@
 # test_exercise
-Some test exercise
 ## Core of Event Log REST Service
 
 ### Functionality:
