@@ -16,45 +16,51 @@ There are 3 base object types: events, categories, persons
 
 GET
 
-Get lists of objects
--"events": http --form GET "http://<base_url>/events/"
--"categories": http --form GET "http://<base_url>/categories/"
--"persons": http --form GET "http://<base_url>/persons/"
+Get lists of objects:
+- - "events": http --form GET "http://<base_url>/events/"
+- - "categories": http --form GET "http://<base_url>/categories/"
+- - "persons": http --form GET "http://<base_url>/persons/"
 
 Get specified object
-http --form GET http://<base_url>/<object_type>/<object_id>
+- - http --form GET http://<base_url>/<object_type>/<object_id>
 
 Get last 10 events by
--category(if 10 or more)
+
+- -category(if 10 or more)
+
 http --form GET http://<base_url>/events/?search=<category_name>
 
--person(if 10 or more)
+- -person(if 10 or more)
+
 http --form GET http://<base_url>/events/?search=<person_name>
 
--by time(if 10 or more)
+- - time(if 10 or more)
+
 http --form GET http://<base_url>/events/?search=<YYYY-mm-dd HH:MM:SS> 
+
 example: 2017-11-07 09:19:08
 
 Last 10 Events are displayed with Paginator mechanism, so you can get next 10
 with adding page=<page_nr> to the request.
+
 Example: http://<base_url>/events/?page=2&search=furniture
 
 
 POST 
 
-Create event
+- - Create event
 http --form POST http://127.0.0.1:8000/events/ text="<event_text>"
 
-Create category or person:
+- - Create category or person:
 http --form POST http://127.0.0.1:8000/<categories_or_persons>/ name="<name>"
 
 
 PUT
 
-Edit event
+- - Edit event
 http --form PUT http://127.0.0.1:8000/events/<event_id>/ text="<event_text>"
 
-Edit category or person
+- - Edit category or person
 http --form PUT http://127.0.0.1:8000/<categories_or_persons>/<id>/ name="<name>"
 
 
