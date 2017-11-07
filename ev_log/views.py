@@ -7,7 +7,7 @@ from .scripts import Paginator
 
 
 class EventViewSet(viewsets.ModelViewSet):
-    queryset = Event.objects.all().order_by('-time')
+    queryset = Event.objects.all()
     serializer_class = EventSerializer
     filter_backends = (SearchFilter,)
     search_fields = ('text', 'category__name', 'person__name', 'time')

@@ -1,2 +1,9 @@
 # Database
 db.sqlite3
+.idea/
+EventLog/__init__.pyc
+EventLog/__pycache__/
+EventLog/settings.pyc
+ev_log/__pycache__/
+ev_log/migrations/__pycache__/
+ev_log/test.txt

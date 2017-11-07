@@ -10,9 +10,15 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = 'Categories'
 
+    def __str__(self):
+        return self.name
+
 
 class Person(models.Model):
     name = models.CharField(default='', max_length=100)
+
+    def __str__(self):
+        return self.name
 
 
 class Event(models.Model):
@@ -20,6 +26,9 @@ class Event(models.Model):
     text = models.CharField(default='', max_length=500)
     category = models.ManyToManyField(Category, related_name='category')
     person = models.ManyToManyField(Person, related_name='person')
+
+    class Meta:
+        ordering = ['-time']
 
     # original save method
     def base_save(self, *args, **kwargs):
