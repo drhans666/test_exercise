@@ -15,9 +15,10 @@ How to construct requests:
 There are 3 base object types: events, categories, persons
 
 GET:
+
 Get lists of objects:
--"events": http --form GET "http://<base_url>/events/",
--"categories": http --form GET "http://<base_url>/categories/",
+-"events": http --form GET "http://<base_url>/events/"
+-"categories": http --form GET "http://<base_url>/categories/"
 -"persons": http --form GET "http://<base_url>/persons/"
 
 Get specified object:
