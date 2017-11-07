@@ -36,9 +36,9 @@ http --form GET http://<base_url>/events/?search=<person_name>
 
 - - time(if 10 or more)
 
-http --form GET http://<base_url>/events/?search=<YYYY-mm-dd HH:MM:SS> 
+http --form GET http://<base_url>/events/?search=<format:YYYY-mm-dd HH:MM:SS> 
 
-example: 2017-11-07 09:19:08
+example: http://<base_url>/events/?search=2017-11-07 09:19:08
 
 Last 10 Events are displayed with Paginator mechanism, so you can get next 10
 with adding page=<page_nr> to the request.
@@ -49,21 +49,21 @@ Example: http://<base_url>/events/?page=2&search=furniture
 POST 
 
 - Create event
-http --form POST http://127.0.0.1:8000/events/ text="<event_text>"
+http --form POST http://<base_url>/events/ text="<event_text>"
 
 - Create category or person:
-http --form POST http://127.0.0.1:8000/<categories_or_persons>/ name="<name>"
+http --form POST http://<base_url>/<categories_or_persons>/ name="<name>"
 
 
 PUT
 
 - Edit event
-http --form PUT http://127.0.0.1:8000/events/<event_id>/ text="<event_text>"
+http --form PUT http://<base_url>/events/<event_id>/ text="<event_text>"
 
 - Edit category or person
-http --form PUT http://127.0.0.1:8000/<categories_or_persons>/<id>/ name="<name>"
+http --form PUT http://<base_url>/<categories_or_persons>/<id>/ name="<name>"
 
 
 DELETE
 
-http --form DELETE http://127.0.0.1:8000/<event_category_person/<id>/
+http --form DELETE http://<base_url>/<event_category_person/<id>/
