@@ -58,9 +58,11 @@ POST
 PUT
 
 - Edit event
+
     http --form PUT http://<base_url>/events/<event_id>/ text="<event_text>"
 
 - Edit category or person
+
     http --form PUT http://<base_url>/<categories_or_persons>/<id>/ name="<name>"
 
 
